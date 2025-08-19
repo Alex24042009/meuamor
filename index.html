@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EU E VOCÊ!!</title>
+    <link rel="stylesheet" href="estyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="Logo">
+            <img src="img/Netflix_2015_logo.svg.png" alt="" width="50px">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="Index.html">Início</a></li>
+                <li><a href="musica.html">Musica</a></li>
+                <li><a href="series.html">Séries</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <section class="banner">
+        <div class="conteudo">
+            <p class="titulo">Alex e Nycolle</p>
+            <p class="detalhes">
+                <span>DESDE 2024 JUNTOS, 2 TEMPORADAS</span>
+                <span class="stars">
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                </span>
+            </p>
+            <p class="descricao">
+                Eu não sei por onde começar...<br> Por que a vida te trouxe de uma maneira tão especial pra mim? E de um
+                modo tão rápido, você se tornou a minha pessoa favorita.<br>
+
+                Lembro do primeiro dia, quando eu estava sentado com a Larissa e bati os olhos em você,<br> e perguntei
+                a ela: "Quem é aquela menininha ali?"<br> Ela olhou pra mim e riu e só pela minha expressão, sabe?<br>
+                Aquela cara de bobo apaixonado, que começa a rir sem perceber que está rindo?<br> Então… você foi a
+                única garotinha daquela escola por quem eu me apaixonei perdidamente.<br> Aquela com quem eu sonhei e
+                sonho em ter uma família.<br>
+
+                Falar de você é algo que é fácil… mas, ao mesmo tempo, não.<br> Descrever sentimentos de pessoas que
+                conhecemos é simples,<br> mas encontrar palavras que realmente descrevam o quanto você é especial pra
+                mim… isso se torna difícil.😍♥♥
+            </p>
+            <div class="botoes">
+                <button id="continuar">
+                    <i class="fa-solid fa-play"></i> Continuar</button>
+                <button id="favorito">
+                    <i class="fa-solid fa-star"></i> Favorito</button>
+            </div>
+        </div>
+    </section>
+    <section class="momentos">
+        <h2>Nossos melhores momentos</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/foto1.png"></div>
+                <div class="swiper-slide"><img src="img/foto2.jpeg"></div>
+                <div class="swiper-slide"><img src="img/foto3.jpeg"></div>
+                <div class="swiper-slide"><img src="img/foto4.jpeg"></div>
+                <div class="swiper-slide"><img src="img/foto5.jpeg"></div>
+                <div class="swiper-slide"><img src="img/foto6.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto7.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto8.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto9.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto10.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto11.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto12.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto13.jpg"></div>
+                <div class="swiper-slide"><img src="img/foto14.jpg"></div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        2025 - Alex
+    </footer>
+
+    <div class="music-control">
+        <button id="btnPlayMusic">Ouvir música de fundo</button>
+        <audio id="musica" loop>
+            <source src="mp3/pequenaflor.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        window.onload = () => {
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                loopedSlides: 3,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 8,
+                spaceBetween: 10,
+                observe: true,
+                observeParents: true,
+                speed: 300,
+                touchRatio: 0.5,
+                threshold: 20,
+
+                breakpoints: {
+                    600: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    900: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    }
+                }
+            });
+        };
+
+        const swiperEl = document.querySelector('.swiper');
+        swiperEl.addEventListener('mousedonw', () => {
+            swiper.autoplay.stop();
+        });
+        swiperEl.addEventListener('mouseup', () => {
+            swiper.autoplay.start();
+        });
+        swiperEl.addEventListener('touchstart', () => {
+            swiper.autoplay.stop();
+        });
+        swiperEl.addEventListener('touchend', () => {
+            swiper.autoplay.start();
+        });
+
+        document.getElementById("continuar").addEventListener("click", function () {
+            const icone = this.querySelector("i");
+            icone.classList.toggle("ativo");
+        });
+
+        document.getElementById("favorito").addEventListener("click", function () {
+            const icone = this.querySelector("i");
+            icone.classList.toggle("ativo");
+        });
+
+
+    </script>
+</body>
+
+</html>

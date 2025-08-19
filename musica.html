@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> EU E VOCÊ!!</title>
+    <link rel="stylesheet" href="estyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="Logo">
+            <img src="img/Netflix_2015_logo.svg.png" alt="" width="50px">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="Index.html">Início</a></li>
+                <li><a href="musica.html">Musica</a></li>
+                <li><a href="series.html">Séries</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="conteudo">
+            <p class="titulo">Alex e Nycolle</p>
+            <p class="detalhes">
+                <span>DESDE 2024 JUNTOS, 2 TEMPORADAS</span>
+                <span class="stars">
+                      <span class="stars">
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                </span>
+                </span>
+            </p>
+            <p>
+                Bem...<br>
+
+                Hoje, mais do que nunca, quero que você saiba o tamanho do meu amor por você.<br> É algo que transborda,
+                que
+                enche meu coração de alegria todos os dias. Agradeço a Deus todos os dias por ter colocado você na minha
+                vida...<br>
+
+                Prometo cuidar do nosso amor com todo o carinho, com toda a dedicação que você merece. <br> Estarei ao
+                seu
+                lado em todos os momentos, para compartilhar sorrisos, superar desafios. <br> Você é o meu porto seguro,
+                a
+                pessoa que dá sentido aos meus dias.<br>
+
+                Que nossa jornada continue sendo abençoada, repleta de amor, cumplicidade e respeito mútuo.<br> Estou
+                profundamente grato a Deus por cada instante ao seu lado e por tudo o que somos juntos.<br> Obrigado por
+                existir e por fazer da minha vida um lugar mais feliz. Estou sentindo tanto sua falta...
+                😍♥♥
+            </p>
+        <div class="botoes">
+                <button id="continuar">
+                    <i class="fa-solid fa-play"></i> Continuar</button>
+                <button id="favorito">
+                    <i class="fa-solid fa-star"></i> Favorito</button>
+            </div>
+    </section>
+    <div id="flower-background"></div>
+    <section class="container">
+        <div class="Nyc">
+            <p>
+                Menina, eu te fiz essa canção<br>
+                Pois sempre que eu te vejo acelera o coração<br>
+                Me bate um desejo de pegar na tua mão<br>
+                E te conhecer<br><br>
+                Eu sei que pode parecer loucura<br>
+                Até meio cara dura vir assim na aventura<br>
+                E te falar da formosura que o teu sorriso traz<br>
+                E que mesmo sem ouvir tua voz eu penso em nós<br><br>
+                Você faz raiar o bem em mim<br>
+                Não dá pra esconder o quanto eu tô afim<br>
+                Pequena flor, pequena flor<br>
+                Você faz raiar o bem em mim<br><br>
+                Não dá pra esconder o quanto eu tô afim<br>
+                Pequena flor, pequena flor<br>
+                Pequena...<br>
+                Menina, eu te fiz essa canção<br><br>
+                Pois sempre que eu te vejo acelera o coração<br>
+                Me bate um desejo de pegar na tua mão<br>
+                E te conhecer<br>
+                Eu sei que pode parecer loucura<br><br>
+                Até meio cara dura vir assim na aventura<br>
+                E te falar da formosura que o teu sorriso traz<br>
+                E que mesmo sem ouvir tua voz eu penso em nós<br>
+                Você faz raiar o bem em mim<br><br>
+                Não dá pra esconder o quanto eu tô afim<br>
+                Pequena flor, pequena flor<br>
+                Você faz raiar o bem em mim<br>
+                Não dá pra esconder o quanto eu tô afim<br><br>
+                Pequena flor, pequena flor (oh, pequena)<br>
+                Pequena...<br>
+                Você faz raiar o bem em mim<br>
+                Não dá pra esconder o quanto eu tô afim<br><br><br>
+                Pequena flor, pequena flor<br>
+                Você faz raiar o bem em mim<br>
+                Não dá pra esconder o quanto eu tô afim<br>
+                Pequena flor, pequena flor (oh, pequena)<br><br>
+                Pequena...🌸
+            </p>
+        </div>
+    </section>
+
+    <footer>2025 - Alex</footer>
+
+    <div class="music-control">
+        <button id="btnPlayMusic">Ouvir música de fundo</button>
+        <audio id="musica" loop>
+            <source src="mp3/pequenaflor.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <script>
+
+                document.getElementById("continuar").addEventListener("click", function () {
+            const icone = this.querySelector("i");
+            icone.classList.toggle("ativo");
+        });
+
+        document.getElementById("favorito").addEventListener("click", function () {
+            const icone = this.querySelector("i");
+            icone.classList.toggle("ativo");
+        });
+
+        const btnPlayMusic = document.getElementById('btnPlayMusic');
+        const musica = document.getElementById('musica');
+        btnPlayMusic.addEventListener('click', () => {
+            if (musica.paused) { musica.play(); btnPlayMusic.textContent = 'Pausar música'; }
+            else { musica.pause(); btnPlayMusic.textContent = 'Ouvir música de fundo'; }
+        });
+        const field = document.getElementById('flower-background');
+
+        function spawnFlower() {
+            const fall = document.createElement('div');
+            fall.className = 'fall';
+            fall.textContent = '🌸';
+
+
+            fall.style.left = Math.random() * 100 + 'vw';
+
+            fall.style.animationDuration = (4 + Math.random() * 4) + 's';
+
+            const size = 16 + Math.random() * 24;
+            fall.style.fontSize = size + 'px';
+
+            fall.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+
+            field.appendChild(fall);
+
+
+            setTimeout(() => fall.remove(), (parseFloat(fall.style.animationDuration) * 1000) + 500);
+        }
+
+        setInterval(spawnFlower, 300);
+    </script>
+</body>
+
+</html>
